@@ -1,0 +1,17 @@
+﻿<ul ng-if="ctr.pagingObject.pages.length" class="pagination" style="cursor:pointer">
+    <li ng-class="{disabled:ctr.pagingObject.currentPage === 1}">
+        <a ng-click="ctr.SetPage(1)">First</a>
+    </li>
+    <li ng-class="{disabled:ctr.pagingObject.currentPage === 1}">
+        <a ng-click="ctr.SetPage(ctr.pagingObject.currentPage - 1)">Previous</a>
+    </li>
+    <li ng-repeat="page in ctr.pagingObject.pages" ng-class="{active:ctr.pagingObject.currentPage === page}">
+        <a ng-click="ctr.SetPage(page)">{{page}}</a>
+    </li>
+    <li ng-class="{disabled:ctr.pagingObject.currentPage === ctr.pagingObject.totalPages}">
+        <a ng-click="ctr.SetPage(ctr.pagingObject.currentPage + 1)">Next</a>
+    </li>
+    <li ng-class="{disabled:ctr.pagingObject.currentPage === ctr.pagingObject.totalPages}">
+        <a ng-click="ctr.SetPage(ctr.pagingObject.totalPages)">Last</a>
+    </li>
+</ul>

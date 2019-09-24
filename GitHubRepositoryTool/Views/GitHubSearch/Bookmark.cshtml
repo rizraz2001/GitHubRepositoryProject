@@ -1,0 +1,34 @@
+﻿
+
+
+<div ng-controller="BookmarkController as ctr">
+
+    <h2>Bookmark<label ng-bind="' (Total : ' + (!ctr.gitHubRepositories.length ? 0 : ctr.gitHubRepositories.length) + ')'"></label></h2>
+
+    @* Notifications *@
+    <div id="notifications" style="max-height:100px;overflow-y:scroll"></div>
+
+    <div class="loader" ng-show="!ctr.isLoaded"></div>
+    <div ng-show="ctr.isLoaded">
+        @* Repositories *@
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-ng-repeat="c in ctr.repositoryItems track by $index">
+                <div class="card align-items-center d-flex justify-content-center btn shadow btn-outline-dark">
+                    <div class="row">
+                        <h5 data-ng-bind="c.name"></h5>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <img style="height: 180px" class="card-img-top col-xs-12 col-lg-12" ng-src="{{c.owner.avatar_url}}" alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @* Directive for paging component *@
+        <git-paging-directive></git-paging-directive>
+    </div>
+
+</div>
