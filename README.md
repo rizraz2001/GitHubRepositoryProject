@@ -13,8 +13,8 @@ you can see notification in top right of the windows if the operation succeed or
 
 * Bookmarks page is for viewing all the user's bookmarks repository that the user saved.
 
-External resources (from nuget packages):
-Autofac mvc - for dependency injection in the project.
+External resources (from nuget packages): \
+Autofac mvc - for dependency injection in the project. \
 Nlog - for logging the the actions.
 
 If there is any question you can ask me any time.
